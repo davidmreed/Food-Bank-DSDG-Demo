@@ -2,7 +2,7 @@ minimum_cumulusci_version: '3.1.2'
 project:
     name: Sam-Food-Bank
     package:
-        name:  Sam-Food-Bank
+        name:  Food-Bank
         namespace: dmr_th_1
         api_version: '47.0'
 
