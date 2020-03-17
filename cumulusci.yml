@@ -1,0 +1,29 @@
+minimum_cumulusci_version: '3.9.0'
+project:
+    name: Food-Bank-DSDG-Demo
+    package:
+        name:  Food-Bank-DSDG-Demo
+        namespace: denver_dev_demo
+        api_version: '48.0'
+    git: 
+        prefix_beta: 'test/' 
+        prefix_release: 'rel/'
+    source_format: sfdx
+
+flows:
+    config_dev:
+        steps:
+            3:
+                task: load_dataset
+
+tasks:
+    robot:
+        options:
+            suites: robot/Food-Bank-DSDG-Demo/tests
+            options:
+                outputdir: robot/Food-Bank-DSDG-Demo/results
+
+    robot_testdoc:
+        options:
+            path: robot/Food-Bank-DSDG-Demo/tests
+            output: robot/Food-Bank-DSDG-Demo/doc/Food-Bank-DSDG-Demo_tests.html
