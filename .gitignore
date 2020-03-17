@@ -2,14 +2,13 @@
 .cci
 .sfdx
 /src.orig
-/src
 
 # Python
 *.pyc
 __pycache__
 
 # Robot Framework results
-robot/Food-Bank-DSDG-Demo/results/
+robot/Sam-Food-Bank/results/
 
 # Editors
 *.sublime-project
