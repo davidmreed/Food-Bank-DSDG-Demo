@@ -1,26 +1,35 @@
 BEGIN TRANSACTION;
 CREATE TABLE "Account" (
-	sf_id VARCHAR(255) NOT NULL, 
+	id INTEGER NOT NULL, 
 	"Name" VARCHAR(255), 
-	parent_id VARCHAR(255), 
-	PRIMARY KEY (sf_id)
+	"Website" VARCHAR(255), 
+	"Phone" VARCHAR(255), 
+	"BillingStreet" VARCHAR(255), 
+	"BillingCity" VARCHAR(255), 
+	"BillingState" VARCHAR(255), 
+	"BillingPostalCode" VARCHAR(255), 
+	"ParentId" VARCHAR(255), 
+	PRIMARY KEY (id)
 );
-INSERT INTO "Account" VALUES('0010R00000xUlPOQA0','A Local Farm','');
+INSERT INTO "Account" VALUES(1,'Sample Account for Entitlements','','','','','','','');
+INSERT INTO "Account" VALUES(2,'Sample Account for Entitlements','','','','','','','');
+INSERT INTO "Account" VALUES(3,'A Local Farm','localcsaourtown.com','505-555-1212','5980 Agua Fria St.','Santa Fe','NM','87501','');
 CREATE TABLE "Delivery_Item__c" (
-	sf_id VARCHAR(255) NOT NULL, 
+	id INTEGER NOT NULL, 
 	"Description__c" VARCHAR(255), 
 	"Storage_Requirements__c" VARCHAR(255), 
-	delivery__c VARCHAR(255), 
-	PRIMARY KEY (sf_id)
+	"Delivery__c" VARCHAR(255), 
+	PRIMARY KEY (id)
 );
-INSERT INTO "Delivery_Item__c" VALUES('a000R000002tUxRQAU','Pumpkins','','a010R000007znK1QAI');
-INSERT INTO "Delivery_Item__c" VALUES('a000R000002tUxSQAU','Frozen Peas','Frozen','a010R000007znK1QAI');
+INSERT INTO "Delivery_Item__c" VALUES(1,'Pumpkins','','1');
+INSERT INTO "Delivery_Item__c" VALUES(2,'Frozen Peas','Frozen','1');
 CREATE TABLE "Delivery__c" (
-	sf_id VARCHAR(255) NOT NULL, 
+	id INTEGER NOT NULL, 
 	"Scheduled_Date__c" VARCHAR(255), 
 	"Status__c" VARCHAR(255), 
-	supplier__c VARCHAR(255), 
-	PRIMARY KEY (sf_id)
+	"Notes__c" VARCHAR(255), 
+	"Supplier__c" VARCHAR(255), 
+	PRIMARY KEY (id)
 );
-INSERT INTO "Delivery__c" VALUES('a010R000007znK1QAI','2019-11-15','Scheduled','0010R00000xUlPOQA0');
+INSERT INTO "Delivery__c" VALUES(1,'2021-04-30','Scheduled','This food needs to be processed right away - it''s very fresh!','3');
 COMMIT;
